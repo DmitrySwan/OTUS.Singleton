@@ -10,7 +10,7 @@ public class CustomLogger {
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static final String INFO = "INFO";
 
-    static CustomLogger getLogger() {
+    static CustomLogger getLogger() {  //статический метод возвращает один и тотже объект
         if (instance == null) {
             instance = new CustomLogger();
         }
