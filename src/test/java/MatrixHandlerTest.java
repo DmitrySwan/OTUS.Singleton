@@ -3,8 +3,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static java.lang.Thread.sleep;
-
 public class MatrixHandlerTest {
 
     private static Logger log = Logger.getLogger(MatrixHandlerTest.class);
@@ -24,11 +22,6 @@ public class MatrixHandlerTest {
     public void matrixMultiplyTest(int dimension, int threadsCount) {
         String startLog = " ------ matrixMultiplyTest start " + "(dimension " + dimension
                 + ", threadsCount "  + threadsCount + ") ------ ";
-        try {
-            sleep(5000);                                //Ожидание, чтобы дать другим потокам поработать
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         customLogger.info(startLog);
         log.info(startLog);
         MatrixHandler matrixHandler = new MatrixHandler(dimension);
